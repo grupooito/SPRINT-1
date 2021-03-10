@@ -11,7 +11,7 @@
     
     
     <div style="text-align: center; background: #132235 ;"><img src="Termo Sense.png" width="300 px" alt="logo_Termosense"></div>
-    <h1 style="color:#132235; text-align: center;">Calculadora de Perda</h1>
+    <h1 style="color:#132235; text-align: center;">Calculadora de Perda e Ganho</h1>
     
     Digite aqui quantos medicamentos termolábeis é recebido por <b>ano:</b> <br>
     <input type="text" id="valor_anualremedio" placeholder="Ex: 100.000 (apenas números)"> <br> <br>
@@ -61,7 +61,7 @@
     
     <br><br>
     
-    (Concluindo o pedido dos sensores, vem com a taxa dos nossos serviços já inclusa, no valor de R$ 5.000,00)
+    (Concluindo o pedido dos sensores, vem com a taxa dos nossos serviços já inclusa, no valor de R$ 25.000,00)
     
     <p></p>
     
@@ -83,11 +83,18 @@
         var result1 = Number (n3 * n4)
         var result2 = Number (result1 / n1)
         var result3 = Number (n2 * n3)
+        var result4 = (n1 / n4) * 75;
+        var result5 = (result4 / n1) * n4;
+        var result6 = (n2  * 75);
+        var result7 = (result6 / n2) ;
         
         div_msg1.innerHTML = `Seu prejuízo anual por conta da perda de remédios termolábeis é de ${result2.toFixed(2)}%
-        que equivale á R$ ${result3.toFixed(2)}. <br> Com a Termo Sense você consegruirá evitar o máximo desses prejuízos com
+        que equivale á R$ ${result3.toFixed(2)}. <br> Com a Termo Sense você conseguirá evitar o máximo desses prejuízos com
         nossos sensores embutidos nas geladeiras e nos transportes <br> garantindo a eficácia e durabiliade do medicamento.
-        Realize já o seu orçamento! `
+        Realize já o seu orçamento! <br><br><h3><b>Resultado pela nossa prestação de serviço: </b></h3> <br><br>
+        Eficácia com TermoSense: 75% <br><br>
+         Medicamentos aproveitados com a Termosense: ${result4} (${result5}%)<br>
+         Total de dinheiro aproveitado: R$ ${result6} (${result7}%)`
     }
     
     function total(){
@@ -97,7 +104,7 @@
         var qtdLm35 = Number (sensor_lm35.value) * lm35;
         var qtdDht11 = Number (sensor_dht11.value) * dht11;
         var resultado = qtdLm35 + qtdDht11;
-        var taxaServico = resultado + 5000;
+        var taxaServico = resultado + 25000;
         
         var totalSensores = Number (sensor_lm35.value) + Number (sensor_dht11.value);
         
